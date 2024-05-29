@@ -30,7 +30,8 @@ url: "https://lalithu.github.io" # the base hostname & protocol for your site, e
 github_username: lalithu
 
 # Build settings
-theme: minima
+# Ported over to regular theme from gem-based theme minima
+# theme: minima
 plugins:
   - jekyll-feed
 # Exclude from processing.
