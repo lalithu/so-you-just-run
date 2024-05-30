@@ -8,7 +8,7 @@ Welcome to soyoujustrun, where I delve into the exhilarating world of running an
 
 # About Me
 
-I'm Lalith Uriti, an undergraduate of mechanical engineering at the Manipal Institute of Technology, Manipal. My passion for engineering stems from a deep desire to comprehend the mechanisms that drive our world and an insatiable curiosity for uncovering the science and physics behind them.
+I'm Lalith Uriti, an undergraduate of mechanical engineering at the Manipal Institute of Technology, Manipal. My passion for engineering stems from a deep desire to comprehend the mechanisms that drive our world and an insatiable curiosity for uncovering the science and physics behind them. Visualizing the mathematics and the ideas it represent when understanding and trying to sole a problem is crucial and I make use of
 
 # My Interests
 
@@ -18,7 +18,11 @@ My marathon [PR](https://www.sportstimingsolutions.in/share.php?event_id=78282&b
 
 Catch my training progress and connect with me on [Strava](https://www.strava.com/athletes/62506000)!
 
-I love listening to music while running, some of my favorite artists and bands are Joji, Cage the Elephant, The Backseat Lovers, and The Beatles.
+Animations and scientific visuals improve conceptual understanding by showing dynamic processes and relationships, making learning clearer and more interactive when compared to trying to learn from a set of static images. I primairily utilize Python to create dynamic visualizations that simplify complex scientific and mathematical concepts, making them more accessible and easier to understand. With the help of libraries such as `Numpy`, `Matplotlib`, `Plotly`, and others, I bring abstract ideas to life with engaging, interactive graphics.
+
+Check out my [Github](https://github.com/lalithu) profile!
+
+I love listening to music while running and pretty much any other activity I can think of, some of my favorite artists and bands are Joji, Cage the Elephant, The Backseat Lovers, and The Beatles.
 
 Check out my playlists on [Spotify](https://open.spotify.com/user/lalithu?si=9e969c5544f141eb)!
 
