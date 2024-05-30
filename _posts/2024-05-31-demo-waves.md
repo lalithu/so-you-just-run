@@ -10,7 +10,7 @@ categories: Science
 
 ```python
 def traveling_wave_fn(x, t, direction=1, amp=1, wave_len=(2 _ np.pi), w=1):
-k = (2 _ np.pi) / wave_len
+    k = (2 _ np.pi) / wave_len
 
     wave_ = amp * np.sin((k * x) - (direction * (w * t)))
 
@@ -26,3 +26,7 @@ k = (2 _ np.pi) / wave_len
 # Resultant Standing Wave
 
 {% include waves.html %}
+
+# Beats
+
+{% include beats.html %}
