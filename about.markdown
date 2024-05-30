@@ -4,9 +4,11 @@ title: About
 permalink: /about/
 ---
 
+Welcome to soyoujustrun, where I delve into the exhilarating world of running and uncover the fascinating realm of applied physics!
+
 # About Me
 
-Welcome to soyoujustrun! I'm Lalith Uriti, an undergraduate of mechanical engineering at the Manipal Institute of Technology. My passion for engineering stems from a deep desire to comprehend the mechanisms that drive our world and an insatiable curiosity for uncovering the science and physics behind them.
+I'm Lalith Uriti, an undergraduate of mechanical engineering at the Manipal Institute of Technology, Manipal. My passion for engineering stems from a deep desire to comprehend the mechanisms that drive our world and an insatiable curiosity for uncovering the science and physics behind them.
 
 # My Interests
 
