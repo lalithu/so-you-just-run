@@ -252,3 +252,9 @@ table {
     border: 1px solid $grey-color-light;
   }
 }
+
+@media (max-width: 750px) { 
+  .aboutme-container {
+    flex-direction: column; /* Stack elements vertically */
+  }
+}
