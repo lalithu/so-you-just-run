@@ -1,3 +1,3 @@
 # so-you-just-run
 
-run
+<p align="center"><img src="assets/images/run.jpg"></p>
