@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Looking at Waves"
-date: 2024-05-30 00:00:01 +0530
+date: 2024-06-09 00:00:01 +0530
 author: Lalith Uriti
 categories: Science
 ---

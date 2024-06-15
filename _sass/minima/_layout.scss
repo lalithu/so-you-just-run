@@ -6,11 +6,11 @@
   // border-bottom: 1px solid $grey-color-light;
   background: linear-gradient(
     to right,
-    #090a0f,
+    hsl(230, 25%, 5%),
     dodgerblue 20%,
     mediumspringgreen 40%,
-    gold 60%,
-    orangered 80%,
+    dodgerblue 60%,
+    mediumspringgreen 80%,
     #090a0f
   );
   min-height: $spacing-unit * 1.865;
@@ -33,10 +33,10 @@
   background: linear-gradient(
     to right,
     #090a0f,
-    dodgerblue 20%,
-    mediumspringgreen 40%,
-    gold 60%,
-    orangered 80%,
+    mediumspringgreen 20%,
+    dodgerblue 40%,
+    mediumspringgreen 60%,
+    dodgerblue 80%,
     #090a0f
   );
   

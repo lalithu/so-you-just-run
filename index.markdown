@@ -2,7 +2,7 @@
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
-heading: Ideas & In Progress
+heading: Ideas & Stuff In Progress
 ---
 
 - [EllipsePy](https://github.com/lalithu), an Orbital Mechanics Modelling Library
@@ -10,6 +10,7 @@ heading: Ideas & In Progress
 {% include mars2020.html %}
 
 - Modelling Collisions
-- Computational Fluids
+- Hamming Codes
+- Bayseian Probabilities
 - Modelling Bending & Shear in Beams
 - Overviewing Design Parameters in Designing of Shafts
