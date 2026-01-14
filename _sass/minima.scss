@@ -99,3 +99,16 @@ $on-laptop:        800px !default;
   margin: auto;
   display: block;
 }
+
+.knowledge-map pre {
+  line-height: 1.3;
+  background-color: transparent;
+  border: none;
+  font-size: 26px;
+}
+
+
+.knowledge-map .root {
+  font-weight: 600;
+  color: #FF4D00;              /* soft cyan */
+}

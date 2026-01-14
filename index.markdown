@@ -81,4 +81,6 @@ loadIcons(tools, "tools-grid");
 <!-- 
 bundle exec jekyll clean
 bundle exec jekyll serve
+bundle exec jekyll serve --livereload
 -->
+
