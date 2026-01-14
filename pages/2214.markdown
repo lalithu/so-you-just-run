@@ -1,0 +1,322 @@
+---
+layout: page
+title: ITSC 2214
+permalink: /2214/
+---
+
+## Data Structures & Algorithms with Lalith 
+
+Hi everyone! 👋
+This page is a Java knowledge map created to help support students in ITSC 2214 Data Structures & Algorithms at the Univeristy of North Carolina at Charlotte.
+
+I’m Lalith Uriti, a teaching assistant for section 004 with Dr. Dale-Marie Wilson. I put this together based on both my own experience with the course and the common questions and challenges I see students run into throughout the semester. If you ever need to reach me, feel free to email me at [luriti@charlotte.edu](mailto:luriti@charlotte.edu)
+
+One thing that comes up a lot in DSA is that struggles usually aren’t about the data structures themselves — they come from gaps in Java fundamentals. Concepts like references vs. primitives, object behavior, recursion, control flow, and how Java actually executes code tend to show up everywhere in this class. Having a solid baseline understanding of Java is crucial for doing well in 2214.
+
+This knowledge map is meant to help with that.
+
+It visually organizes the major Java and data-structure-related concepts you’re expected to be comfortable with, shows how they break down into subtopics, and highlights how everything connects. The goal is fast recall and conceptual navigation, not step-by-step teaching or replacing lectures.
+
+Each entry represents a concept you should recognize and understand at a high level. You can click on many entries to jump to related explanations below, letting you focus on one idea at a time while still keeping the bigger picture in mind. Think of it as a way to organize your understanding, not something you need to memorize line by line.
+
+You can use this map to:
+
+- review Java fundamentals before in class quizzes and the final exam,
+
+- identify weak spots to focus your studying,
+
+- or quickly refresh concepts that show up in homework, labs, or projects.
+
+This is a living resource! It reflects both topics I’ve already studied deeply and concepts I regularly revisit to keep my understanding sharp. Hopefully, it helps makes 2214 feel a little more manageable and connected.
+
+---
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.back-link').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const id = link.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+  });
+});
+</script>
+
+
+<div class="knowledge-map">
+<pre>
+Understanding Java
+    ├─ <a id="map-program-lifecycle" href="#program-lifecycle" class="map-link"><span class="root">Program lifecycle</span></a>
+    │  ├─ Source code (.java)
+    │  │  └─ Human-readable Java source
+    │  ├─ Compilation (javac)
+    │  │  └─ Converts .java → .class (bytecode)
+    │  ├─ Bytecode (.class)
+    │  │  └─ Platform-independent instructions
+    │  └─ JVM execution
+    │     └─ Bytecode executed on target machine
+    │
+    ├─ <a id="map-basics" href="#basics" class="map-link"><span class="root">Basics</span></a>
+    │  ├─ Program entry
+    │  │  ├─ main(String[] args)
+    │  │  │  └─ Entry point for all Java programs
+    │  │  └─ Execution order
+    │  │     └─ Top-to-bottom, statement by statement
+    │  │
+    │  ├─ Data types and variables
+    │  │  ├─ Variables
+    │  │  │  └─ Named storage locations with a fixed type
+    │  │  │
+    │  │  ├─ Primitive data types
+    │  │  │  ├─ byte (8-bit)
+    │  │  │  ├─ short (16-bit)
+    │  │  │  ├─ int (32-bit)
+    │  │  │  ├─ long (64-bit)
+    │  │  │  ├─ float (32-bit, decimal)
+    │  │  │  ├─ double (64-bit, decimal)
+    │  │  │  ├─ char (Unicode character)
+    │  │  │  └─ boolean (true / false)
+    │  │  │     └─ Not numeric (0 ≠ false)
+    │  │  │
+    │  │  ├─ Reference types
+    │  │  │  ├─ Store memory address
+    │  │  │  ├─ Examples: String, arrays, objects
+    │  │  │  └─ Created using new
+    │  │  │
+    │  │  ├─ Stack vs Heap
+    │  │  │  ├─ Primitives → stack (values)
+    │  │  │  └─ References → stack (address) → heap (object)
+    │  │  │
+    │  │  ├─ Type casting
+    │  │  │  ├─ Implicit (widening)
+    │  │  │  │  └─ int → long
+    │  │  │  ├─ Explicit (narrowing)
+    │  │  │  │  └─ long → int
+    │  │  │  └─ boolean cannot be cast
+    │  │  │
+    │  │  └─ Variable scope
+    │  │     ├─ Local
+    │  │     ├─ Parameter
+    │  │     └─ Field
+    │  │
+    │  ├─ Operations on primitive types
+    │  │  ├─ Arithmetic (+ − * / %)
+    │  │  ├─ Increment / decrement
+    │  │  │  ├─ Postfix (a++, a--) → use then modify
+    │  │  │  └─ Prefix (++a, --a) → modify then use
+    │  │  │
+    │  │  ├─ Relational operators
+    │  │  │  ├─ ==, !=
+    │  │  │  ├─ >, >=
+    │  │  │  └─ <, <=
+    │  │  │
+    │  │  ├─ Boolean logic
+    │  │  │  ├─ NOT (!) → invert
+    │  │  │  ├─ AND (&&) → both true
+    │  │  │  ├─ OR (||) → one true
+    │  │  │  ├─ XOR (^) → different
+    │  │  │  ├─ Precedence: ! → ^ → && → ||
+    │  │  │  └─ Short-circuiting
+    │  │  │     ├─ false && … → false
+    │  │  │     └─ true || … → true
+    │  │  │
+    │  │  └─ Assignment operators
+    │  │     └─ =, +=, -=, *=, /=, %=
+    │  │
+    │  ├─ Control flow statements
+    │  │  ├─ Conditionals
+    │  │  │  ├─ if / else
+    │  │  │  ├─ switch
+    │  │  │  └─ Ternary: cond ? a : b
+    │  │  │
+    │  │  ├─ Loops
+    │  │  │  ├─ for
+    │  │  │  ├─ while
+    │  │  │  └─ do-while
+    │  │  │
+    │  │  └─ Branching
+    │  │     ├─ break
+    │  │     └─ continue
+    │  │
+    │  └─ Strings
+    │     ├─ String (immutable)
+    │     │  ├─ length()
+    │     │  ├─ charAt(i)
+    │     │  ├─ substring(i), substring(i, j)
+    │     │  ├─ equals / equalsIgnoreCase
+    │     │  ├─ compareTo / compareToIgnoreCase
+    │     │  ├─ contains
+    │     │  ├─ startsWith / endsWith
+    │     │  ├─ indexOf / lastIndexOf
+    │     │  ├─ toLowerCase / toUpperCase / trim
+    │     │  ├─ split(regex)
+    │     │  └─ toCharArray()
+    │     │
+    │     ├─ Character helpers
+    │     │  ├─ isLetter / isDigit / isLetterOrDigit
+    │     │  ├─ isUpperCase / isLowerCase
+    │     │  └─ toUpperCase / toLowerCase
+    │     │
+    │     └─ StringBuilder (mutable)
+    │        ├─ append(String / char / int)
+    │        ├─ setCharAt
+    │        ├─ insert
+    │        ├─ delete
+    │        └─ toString()
+    │
+    ├─ <a id="map-code-organization" href="#code-organization" class="map-link"><span class="root">Code organization</span></a>
+    │  ├─ Methods
+    │  │  ├─ Declaration
+    │  │  │  └─ modifiers + return + name + params + body
+    │  │  ├─ Signature
+    │  │  │  └─ name + parameter list
+    │  │  ├─ Static vs instance
+    │  │  ├─ main method
+    │  │  │  └─ public static void main(String[] args)
+    │  │  ├─ Method calls
+    │  │  │  ├─ Class.method()
+    │  │  │  └─ object.method()
+    │  │  └─ Built-in vs user-defined
+    │  │
+    │  ├─ Classes and objects
+    │  │  ├─ Class → blueprint
+    │  │  ├─ Object → instance
+    │  │  ├─ Fields → state
+    │  │  ├─ Constructors → initialization
+    │  │  └─ this → current object
+    │  │
+    │  └─ Inheritance (IS-A)
+    │     ├─ extends keyword
+    │     ├─ Single inheritance
+    │     └─ Polymorphism (override)
+    │
+    ├─ <a id="map-working-with-data" href="#working-with-data" class="map-link"><span class="root">Working with data</span></a>
+    │  ├─ Arrays
+    │  │  ├─ Declaration: int[] arr
+    │  │  ├─ Instantiation: new int[n]
+    │  │  ├─ Default values
+    │  │  │  ├─ int → 0
+    │  │  │  ├─ boolean → false
+    │  │  │  └─ reference → null
+    │  │  ├─ Length: arr.length (field)
+    │  │  ├─ Iteration
+    │  │  │  ├─ for (i < arr.length)
+    │  │  │  └─ for-each
+    │  │  ├─ Processing patterns
+    │  │  │  ├─ Search
+    │  │  │  ├─ Accumulate
+    │  │  │  └─ Predicate check
+    │  │  └─ 2D arrays
+    │  │     └─ Nested loops
+    │  │
+    │  ├─ Collections framework
+    │  │  ├─ Iterable
+    │  │  ├─ List
+    │  │  │  ├─ ArrayList (dynamic array)
+    │  │  │  └─ LinkedList (node-based)
+    │  │  ├─ Set
+    │  │  │  └─ HashSet
+    │  │  └─ Map
+    │  │     └─ HashMap
+    │  │
+    │  ├─ Searching & ordering
+    │  │  ├─ Linear search
+    │  │  ├─ Comparable
+    │  │  │  └─ object defines compareTo
+    │  │  └─ Comparator
+    │  │     └─ external comparison logic
+    │  │
+    │  ├─ Hashing
+    │  │  ├─ char → Unicode int
+    │  │  ├─ Accumulate values
+    │  │  └─ Modulo tableSize
+    │  │
+    │  ├─ Stacks & queues
+    │  │  ├─ Stack (LIFO)
+    │  │  │  ├─ push / pop / peek
+    │  │  │  └─ Reverse, palindrome, postfix
+    │  │  └─ Queue (FIFO)
+    │  │     ├─ enqueue / dequeue
+    │  │     └─ Conditional cycling
+    │  │
+    │  ├─ Linked structures
+    │  │  ├─ Node&lt;E&gt; (data, next)
+    │  │  ├─ Build from array
+    │  │  ├─ Insert / remove
+    │  │  └─ Linear search
+    │  │
+    │  ├─ Recursion
+    │  │  ├─ Base case
+    │  │  ├─ Recursive case
+    │  │  ├─ Math sequences
+    │  │  ├─ String recursion
+    │  │  ├─ Array recursion
+    │  │  └─ Tree recursion
+    │  │
+    │  ├─ Trees
+    │  │  ├─ Binary tree
+    │  │  ├─ Traversals
+    │  │  │  ├─ Preorder (NLR)
+    │  │  │  ├─ Inorder (LNR)
+    │  │  │  └─ Postorder (LRN)
+    │  │  └─ Properties
+    │  │     ├─ Height
+    │  │     ├─ Node count
+    │  │     └─ Full / complete
+    │  │
+    │  └─ Graphs
+    │     ├─ Representations
+    │     │  ├─ Adjacency matrix
+    │     │  └─ Adjacency list
+    │     ├─ Properties
+    │     │  ├─ Self loops
+    │     │  ├─ Degree
+    │     │  ├─ Edge count
+    │     │  ├─ Complete graph
+    │     │  └─ Triangle detection
+    │     └─ Graph algorithms
+    │        ├─ hasEdge
+    │        ├─ removeEdge
+    │        ├─ getNodeDegree
+    │        └─ Matrix ↔ list conversion
+    │
+    └─ <a id="map-errorless-code" href="#errorless-code" class="map-link"><span class="root">Errorless code</span></a>
+            ├─ Exceptions
+            │  ├─ Checked
+            │  ├─ Unchecked
+            │  └─ try / catch / finally
+            │
+            ├─ Common runtime errors
+            │  ├─ NullPointerException
+            │  ├─ ArithmeticException
+            │  └─ IndexOutOfBoundsException
+            │
+            └─ Testing
+                ├─ Unit tests
+                ├─ Assertions
+                └─ JUnit
+</pre>
+</div>
+
+<div id="program-lifecycle" class="section-anchor"></div>
+## <a href="#map-program-lifecycle" class="back-link">Program lifecycle</a>
+
+
+<div id="basics" class="section-anchor"></div>
+## <a href="#map-basics" class="back-link">Basics</a>
+
+
+<div id="code-organization" class="section-anchor"></div>
+## <a href="#map-code-organization" class="back-link">Code organization</a>
+
+
+<div id="working-with-data" class="section-anchor"></div>
+## <a href="#map-working-with-data" class="back-link">Working with data</a>
+
+
+<div id="errorless-code" class="section-anchor"></div>
+## <a href="#map-errorless-code" class="back-link">Errorless code</a>
