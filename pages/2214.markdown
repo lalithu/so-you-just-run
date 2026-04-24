@@ -51,13 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
 <pre>
 Understanding Java
     ├─ <a id="map-program-lifecycle" href="#program-lifecycle" class="map-link"><span class="root">Program lifecycle</span></a>
-    │  ├─ Source code (.java)
+    │  ├─ <a id="map-source-code" href="#source-code" class="map-link">Source code (.java)</a>
     │  │  └─ Human-readable Java source
-    │  ├─ Compilation (javac)
+    │  ├─ <a id="map-compilation" href="#compilation" class="map-link">Compilation (javac)</a>
     │  │  └─ Converts .java → .class (bytecode)
-    │  ├─ Bytecode (.class)
+    │  ├─ <a id="map-bytecode" href="#bytecode" class="map-link">Bytecode (.class)</a>
     │  │  └─ Platform-independent instructions
-    │  └─ JVM execution
+    │  └─ <a id="map-jvm-execution" href="#jvm-execution" class="map-link">JVM execution</a>
     │     └─ Bytecode executed on target machine
     │
     ├─ <a id="map-basics" href="#basics" class="map-link"><span class="root">Basics</span></a>
@@ -305,6 +305,53 @@ Understanding Java
 <div id="program-lifecycle" class="section-anchor"></div>
 ## <a href="#map-program-lifecycle" class="back-link">Program lifecycle</a>
 
+<div id="source-code" class="section-anchor"></div>
+#### <a href="#map-source-code" class="back-link">Source code</a>
+Source code is the human-written form of a Java program and is where all logic is defined using Java’s syntax and rules. These files are readable and editable by programmers but cannot be executed directly by the computer.
+
+In real projects (especially coursework), you may be given empty or partially completed `.java` files to implement while other functionality already exists as compiled `.class` files. This separation is intentional: it allows you to write code against an existing interface or API without seeing the full implementation, which mirrors how real-world libraries are used.
+
+When you type in VS Code, the editor is constantly analyzing your source code in the background. It checks for syntax errors, missing imports, type mismatches, and unresolved methods before you ever run the program, which is why errors and warnings appear as you type.
+
+
+
+<div id="compilation" class="section-anchor"></div>
+#### <a href="#map-compilation" class="back-link">Compilation</a>
+Compilation is the process where the Java compiler, `javac`, checks `.java` files for syntax and type errors. If the code is valid, `javac` translates the source code into `.class` files containing bytecode.
+
+This step is where Java becomes strict: every variable must have a type, every method call must exist, and access rules must be respected. If compilation fails, no `.class` file is produced, and the program cannot proceed.
+
+When you click Run or Test in VS Code, the IDE automatically invokes `javac` for you behind the scenes. The success or failure of compilation directly determines whether the JVM will ever start, which is why many errors never make it to “runtime.”
+
+
+
+<div id="bytecode" class="section-anchor"></div>
+#### <a href="#map-bytecode" class="back-link">Bytecode</a>
+Bytecode is the compiled output of a Java program stored in `.class` files. It is platform-independent and designed to run on any system that has a Java Virtual Machine.
+
+Although `.class` files may show readable strings when opened in an editor, they are not human-readable source code and are not meant to be edited. What you’re seeing are embedded names, constants, and metadata that help the JVM and tools like debuggers and test frameworks understand the structure of the program.
+
+At this stage, your program exists as structured instructions, not text logic. This is the form that libraries, testing frameworks, and the JVM itself work with.
+
+
+<div id="jvm-execution" class="section-anchor"></div>
+#### <a href="#map-jvm-execution" class="back-link">JVM execution</a>
+JVM execution begins when a Java program is run and the Java Virtual Machine starts with a specific entry point, such as a `main` method or a JUnit test. The JVM does not load every class at once; instead, it loads `.class` files on demand as they are needed.
+
+Each class is first verified to ensure the bytecode is safe and valid, then linked so references between classes can be resolved. Only after this does execution begin, with the JVM translating bytecode into machine code that your operating system can run.
+
+During execution, tools like VS Code, JUnit, and the Java runtime collect information about what code is being used. When you see percentages, green checkmarks, or coverage bars, those come from testing and coverage tools that track which lines and branches of bytecode were executed during a run.
+
+In other words, VS Code isn’t just “running” your program. It is coordinating compilation, launching the JVM, running tests, observing execution, and reporting results back to you in a human-friendly way.
+
+
+Java separates writing, checking, running, and observing code into clear stages, and your IDE simply automates the handoff between them.
+
+
+
+
+
+
 
 <div id="basics" class="section-anchor"></div>
 ## <a href="#map-basics" class="back-link">Basics</a>
@@ -320,3 +367,100 @@ Understanding Java
 
 <div id="errorless-code" class="section-anchor"></div>
 ## <a href="#map-errorless-code" class="back-link">Errorless code</a>
+
+
+
+<div id="program-entry" class="section-anchor"></div>
+#### <a href="#map-basics" class="back-link">Program entry</a>
+Every Java program begins execution at `public static void main(String[] args)`, which serves as the JVM entry point. Statements execute top-to-bottom unless redirected by control flow constructs.
+
+<div id="data-types-and-variables" class="section-anchor"></div>
+#### <a href="#map-basics" class="back-link">Data types and variables</a>
+Java is statically typed, meaning every variable must declare a fixed type such as `int`, `double`, or `String` before use. Variables represent named storage locations whose behavior depends on whether they are primitive values or object references.
+
+<div id="operations-on-primitive-types" class="section-anchor"></div>
+#### <a href="#map-basics" class="back-link">Operations on primitive types</a>
+Primitive types support arithmetic, relational, and logical operations including `+`, `==`, `&&`, and `||` with defined precedence rules. Increment and decrement operators behave differently in prefix versus postfix form.
+
+<div id="control-flow-statements" class="section-anchor"></div>
+#### <a href="#map-basics" class="back-link">Control flow statements</a>
+Control flow constructs such as `if`, `switch`, `for`, and `while` determine execution paths and repetition. Keywords like `break` and `continue` alter loop behavior at runtime.
+
+<div id="strings" class="section-anchor"></div>
+#### <a href="#map-basics" class="back-link">Strings</a>
+`String` objects are immutable, meaning operations like `substring()` create new objects rather than modifying existing ones. `StringBuilder` enables efficient mutable string manipulation.
+
+---
+
+<div id="code-organization" class="section-anchor"></div>
+## <a href="#map-code-organization" class="back-link">Code organization</a>
+
+<div id="methods" class="section-anchor"></div>
+#### <a href="#map-code-organization" class="back-link">Methods</a>
+Methods encapsulate reusable behavior and are identified by a signature consisting of a name and parameter list. Calls resolve at compile time based on static types.
+
+<div id="classes-and-objects" class="section-anchor"></div>
+#### <a href="#map-code-organization" class="back-link">Classes and objects</a>
+A `class` defines structure and behavior, while an `object` is a runtime instance created using `new`. Fields store state, and constructors initialize that state.
+
+<div id="inheritance" class="section-anchor"></div>
+#### <a href="#map-code-organization" class="back-link">Inheritance</a>
+Inheritance establishes an IS-A relationship using `extends`, allowing subclasses to reuse and override behavior. Java supports single inheritance with runtime polymorphism.
+
+---
+
+<div id="working-with-data" class="section-anchor"></div>
+## <a href="#map-working-with-data" class="back-link">Working with data</a>
+
+<div id="arrays" class="section-anchor"></div>
+#### <a href="#map-working-with-data" class="back-link">Arrays</a>
+Arrays store fixed-size sequences of same-type elements and expose their size via `arr.length`. Elements are automatically initialized to default values.
+
+<div id="collections-framework" class="section-anchor"></div>
+#### <a href="#map-working-with-data" class="back-link">Collections framework</a>
+The Collections Framework provides dynamic data structures such as `ArrayList`, `HashSet`, and `HashMap`. Interfaces define behavior while implementations determine performance.
+
+<div id="searching-and-ordering" class="section-anchor"></div>
+#### <a href="#map-working-with-data" class="back-link">Searching & ordering</a>
+Linear search inspects elements sequentially, while ordering relies on `Comparable` or `Comparator`. Comparison logic determines sort order and equality semantics.
+
+<div id="hashing" class="section-anchor"></div>
+#### <a href="#map-working-with-data" class="back-link">Hashing</a>
+Hashing converts data into integer indices using `hashCode()` and modulo arithmetic. Efficient hashing minimizes collisions and enables constant-time access.
+
+<div id="stacks-and-queues" class="section-anchor"></div>
+#### <a href="#map-working-with-data" class="back-link">Stacks & queues</a>
+Stacks follow LIFO behavior using `push` and `pop`, while queues follow FIFO ordering using `enqueue` and `dequeue`. These structures model controlled access patterns.
+
+<div id="linked-structures" class="section-anchor"></div>
+#### <a href="#map-working-with-data" class="back-link">Linked structures</a>
+Linked structures store elements in `Node<E>` objects connected by references rather than contiguous memory. This enables efficient insertion and removal.
+
+<div id="recursion" class="section-anchor"></div>
+#### <a href="#map-working-with-data" class="back-link">Recursion</a>
+Recursion solves problems by invoking a method within itself until a base case is reached. Each recursive call consumes stack space.
+
+<div id="trees" class="section-anchor"></div>
+#### <a href="#map-working-with-data" class="back-link">Trees</a>
+Trees represent hierarchical data using parent-child relationships. Traversals such as inorder and preorder define visit order.
+
+<div id="graphs" class="section-anchor"></div>
+#### <a href="#map-working-with-data" class="back-link">Graphs</a>
+Graphs model arbitrary relationships using adjacency matrices or adjacency lists. Algorithms operate on edges, degrees, and connectivity.
+
+---
+
+<div id="errorless-code" class="section-anchor"></div>
+## <a href="#map-errorless-code" class="back-link">Errorless code</a>
+
+<div id="exceptions" class="section-anchor"></div>
+#### <a href="#map-errorless-code" class="back-link">Exceptions</a>
+Exceptions represent abnormal execution conditions handled using `try`, `catch`, and `finally`. Checked exceptions require explicit handling at compile time.
+
+<div id="common-runtime-errors" class="section-anchor"></div>
+#### <a href="#map-errorless-code" class="back-link">Common runtime errors</a>
+Errors such as `NullPointerException` and `IndexOutOfBoundsException` occur during execution due to invalid state or access.
+
+<div id="testing" class="section-anchor"></div>
+#### <a href="#map-errorless-code" class="back-link">Testing</a>
+Testing verifies correctness using unit tests, assertions, and frameworks like `JUnit`. Automated tests detect regressions early.
